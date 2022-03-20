@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+
+  database:
+    container_name: smartinventory_db
+    build: ./DB
+    ports:
+      - "5432:5432"
+    image: louisb23197/smartinventory_db
+    #volumes:
+      #- ./postgres-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_NAME=smartinventory_db
+      
+  api:
+    container_name: smartinventory_api
+    build: ./API
+    command: uvicorn main:app --host 0.0.0.0
+    ports:
+      - "8000:8000"
+    image: louisb23197/smartinventory_api
+    environment:
+      - DATABASE_URL=postgresql://postgres:pass@smartinventory_db:5432
