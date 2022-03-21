@@ -9,7 +9,7 @@ The database is designed to host data for the inventory management, storage mana
 - [Relational Schema](#relational-schema)
 
 ## Deployment
- 1. Download the docker-compose.yml file and edit it to fit your needs :
+ 1. Download the docker-compose.yml file and edit it for your application :
  ```
  curl -OL https://raw.githubusercontent.com/DeVinci-Innovation-Center/SMART-INVENTORY-DB-API/main/docker-compose.yml
  ```
