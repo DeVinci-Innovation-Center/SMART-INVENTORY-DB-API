@@ -1,6 +1,6 @@
 # SMART-INVENTORY-DB-API
 
-This repository contains the database (PostgreSQL) and REST API (FastAPI) for the Smart Inventory ecosystem. 
+This repository contains the source code for the database (PostgreSQL) and REST API (FastAPI) of the Smart Inventory ecosystem. 
 The database is designed to host data for the inventory management, storage management, material order management and cabinet access monitoring features of the platforms of the ecosystem (Smart Lock, Augmented Worker Interface, DVIC's website).
 
 ## Table of contents
