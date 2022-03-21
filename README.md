@@ -7,6 +7,7 @@ The database is designed to host data for the inventory management, storage mana
 - [Deployment](#deployment)
 - [Entity-Relationship Diagram](#entity-relationship-diagram)
 - [Relational Schema](#relational-schema)
+- [HTTP Requests](#http-requests)
 
 ## Deployment
  1. Download the docker-compose.yml file and edit it for your application :
@@ -38,3 +39,54 @@ Primary keys are underlined and foreign keys are preceded by a hash sign :
 **storage_units** (<ins>id</ins>, state, verified, #item_id, #cabinet_id)
 
 **cabinets_unlock_attempts** (<ins>id</ins>, date, granted, #user_id, #cabinet_id) 
+
+## HTTP Requests
+
+### USERS
+
+#### CREATE
+#### READ
+#### UPDATE
+#### DELETE
+
+### CABINETS
+
+#### CREATE
+#### READ
+#### UPDATE
+#### DELETE
+
+### CATEGORIES
+
+#### CREATE
+#### READ
+#### UPDATE
+#### DELETE
+
+### ITEMS
+
+#### CREATE
+#### READ
+#### UPDATE
+#### DELETE
+
+### ORDER REQUESTS
+
+#### CREATE
+#### READ
+#### UPDATE
+#### DELETE
+
+### STORAGE UNITS
+
+#### CREATE
+#### READ
+#### UPDATE
+#### DELETE
+
+### CABINETS UNLOCK ATTEMPTS
+
+#### CREATE
+#### READ
+#### UPDATE
+#### DELETE
