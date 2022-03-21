@@ -9,3 +9,21 @@
  ```
  docker-compose up
  ```
+## Entity-Relationship Diagram
+
+![ERD](Docs/SI_ERD_Diagram.png)
+
+## Relational Schema
+**users** (<ins>uid</ins>, firstname, lastname)
+
+**cabinets** (<ins>id</ins>, description)
+
+**categories** (<ins>id</ins>, title, description, #parent_id)
+
+**items** (<ins>id</ins>, title, description, price, link, #category_id)
+
+**orders_requests** (<ins>id</ins>, date, state, #item_id, #user_id)
+
+**storage_units** (<ins>id</ins>, state, verified, #item_id, #cabinet_id)
+
+**cabinets_unlock_attempts** (<ins>id</ins>, date, granted, #user_id, #cabinet_id) 
