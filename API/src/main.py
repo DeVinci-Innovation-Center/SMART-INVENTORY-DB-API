@@ -16,6 +16,13 @@ def get_db():
     finally:
         db.close()
 
+
+# MAIN
+
+@app.get("/")
+def root():
+    return {"message": "Welcome to Smart Inventory"}
+
 # USERS
 
 @app.get("/users/", response_model=List[schemas.User])
