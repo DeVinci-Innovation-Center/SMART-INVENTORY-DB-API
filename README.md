@@ -7,7 +7,6 @@ The database is designed to host data for the inventory management, storage mana
 - [Deployment](#deployment)
 - [Entity-Relationship Diagram](#entity-relationship-diagram)
 - [Relational Schema](#relational-schema)
-- [HTTP Requests](#http-requests)
 
 ## Deployment
  1. Download the docker-compose.yml file and edit it for your application :
