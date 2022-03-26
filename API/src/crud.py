@@ -108,7 +108,7 @@ def get_storage_units_by_cabinet_id(db: Session, cabinet_id: str):
     return db.query(models.StorageUnit).filter(models.StorageUnit.cabinet_id == cabinet_id).all()
 
 def create_storage_unit(db: Session, storage_unit: schemas.StorageUnit):
-    db_storage_unit = models.StorageUnit(state=storage_unit.state, verified=storage_unit.verified, item_id=storage_unit.item_id, cabinet_id=storage_unit.cabinet_id)
+    db_storage_unit = models.StorageUnit(id = storage_unit.id, state=storage_unit.state, verified=storage_unit.verified, item_id=storage_unit.item_id, cabinet_id=storage_unit.cabinet_id)
     db.add(db_storage_unit)
     db.commit()
     db.refresh(db_storage_unit)

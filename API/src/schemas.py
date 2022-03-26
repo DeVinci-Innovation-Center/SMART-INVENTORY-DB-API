@@ -75,6 +75,8 @@ class OrderRequest(OrderRequestBase):
 
 class StorageUnitBase(BaseModel):
     id: int
+    state: Optional[int] = 0
+    verified: Optional[bool] = False
     item_id: int
     cabinet_id: Optional[str] = None
 
@@ -82,8 +84,6 @@ class StorageUnitCreate(StorageUnitBase):
     pass
 
 class StorageUnit(StorageUnitBase):
-    state: int
-    verified: bool
 
     class Config:
         orm_mode = True
