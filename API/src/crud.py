@@ -101,6 +101,9 @@ def create_order_request(db: Session, order_request: schemas.OrderRequest):
 
 # STORAGE UNITS
 
+def get_all_storage_units(db: Session):
+    return db.query(models.StorageUnit).all()
+
 def get_storage_unit_by_id(db: Session, id: int):
     return db.query(models.StorageUnit).filter(models.StorageUnit.id == id).first()
 

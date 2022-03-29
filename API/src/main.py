@@ -200,6 +200,10 @@ def delete_order_request_by_id(id: int, db: Session = Depends(get_db)):
 
 # STORAGE UNITS
 
+@app.get("/storage-units/", response_model=List[schemas.StorageUnit])
+def read_all_storage_units(db: Session = Depends(get_db)):
+    return crud.get_all_storage_units(db)
+
 @app.get("/storage-unit/{id}/", response_model=schemas.StorageUnit)
 def read_storage_unit_by_id(id: int, db: Session = Depends(get_db)):
     db_storage_unit = crud.get_storage_unit_by_id(db, id)
