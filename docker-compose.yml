@@ -23,4 +23,5 @@ services:
       - "8000:8000"
     image: louisb23197/smartinventory_api
     environment:
+      - ROOT_PATH=/smart_inventory/api
       - DATABASE_URL=postgresql://postgres:pass@smartinventory_db:5432

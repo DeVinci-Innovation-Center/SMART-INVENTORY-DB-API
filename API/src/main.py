@@ -1,3 +1,4 @@
+import os
 import crud, models, schemas
 
 from database import SessionLocal
@@ -7,7 +8,7 @@ from sqlalchemy.orm import Session
 from typing import List
 
 
-app = FastAPI()
+app = FastAPI(root_path=os.environ['ROOT_PATH'])
 
 def get_db():
     db = SessionLocal()
