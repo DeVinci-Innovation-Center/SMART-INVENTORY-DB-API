@@ -88,6 +88,13 @@ def delete_cabinet_by_id(id: str, db: Session = Depends(get_db)):
 def read_root_categories(db: Session = Depends(get_db)):
     return crud.get_root_categories(db)
 
+@app.get("/category/{id}/", response_model=schemas.Category)
+def read_category_by_id(id: str, db: Session = Depends(get_db)):
+    db_category = crud.get_category_by_id(db, id)
+    if db_category is None:
+        raise HTTPException(status_code=404, detail="Category not found")
+    return db_category
+
 @app.get("/categories/subcategories/{parent_id}/", response_model=List[schemas.Category]) # reads all sub-categories of a category
 def read_sub_categories(parent_id: int, db: Session = Depends(get_db)):
     parent_category = crud.get_category_by_id(db, parent_id)
