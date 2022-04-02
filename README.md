@@ -7,8 +7,10 @@ The database is designed to host data for the inventory management, storage mana
 - [Deployment](#deployment)
 - [Entity-Relationship Diagram](#entity-relationship-diagram)
 - [Relational Schema](#relational-schema)
+- [Testing](#testing)
 
 ## Deployment
+
  1. Download the docker-compose.yml file and edit it for your application :
  ```
  curl -OL https://raw.githubusercontent.com/DeVinci-Innovation-Center/SMART-INVENTORY-DB-API/main/docker-compose.yml
@@ -38,3 +40,10 @@ Primary keys are underlined and foreign keys are preceded by a hash sign :
 **storage_units** (<ins>id</ins>, state, verified, #item_id, #cabinet_id)
 
 **cabinets_unlock_attempts** (<ins>id</ins>, date, granted, #user_id, #cabinet_id)
+
+## Testing
+
+Run the unit tests with:
+```
+docker exec -it smartinventory_api python3 -m pytest
+```
