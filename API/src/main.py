@@ -95,7 +95,11 @@ def delete_cabinet_by_id(id: str, db: Session = Depends(get_db)):
 
 # CATEGORIES
 
-@app.get("/categories/", response_model=List[schemas.Category]) # reads all root categories
+@app.get("/categories/", response_model=List[schemas.Category]) # reads all categories
+def read_all_categories(db: Session = Depends(get_db)):
+    return crud.get_all_categories(db)
+
+@app.get("/categories/root/", response_model=List[schemas.Category]) # reads all root categories
 def read_root_categories(db: Session = Depends(get_db)):
     return crud.get_root_categories(db)
 

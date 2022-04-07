@@ -35,6 +35,9 @@ def create_cabinet(db: Session, cabinet: schemas.CabinetCreate):
 
 # CATEGORIES
 
+def get_all_categories(db: Session):
+    return db.query(models.Category).all()
+
 def get_category_by_id(db: Session, id: int):
     return db.query(models.Category).filter(models.Category.id == id).first()
 
