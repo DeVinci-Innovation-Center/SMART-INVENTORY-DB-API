@@ -3,12 +3,23 @@ import crud, models, schemas
 
 from database import SessionLocal
 from fastapi import FastAPI, Depends, HTTPException, Request, Form
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
 from sqlalchemy.orm import Session
 from typing import List
 
 
 app = FastAPI(root_path=os.environ['ROOT_PATH'])
+
+origins = ['*']
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=['*'],
+    allow_headers=['*']
+)
 
 def get_db():
     db = SessionLocal()
